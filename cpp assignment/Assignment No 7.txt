@@ -1,0 +1,335 @@
+Assignment No:- 7
+
+
+problem 1>>>>
+
+code>>>>>>
+#include<iostream>
+using namespace std;
+class student
+{
+ private:
+     string name;
+     int rollno,marks[5],sum=0,i;
+     float avg;
+     
+     
+ public:
+    void set_data()
+    {
+      cout<<"\nStudent Name= ";
+	  cin>>name;
+		cout<<"\nStudent Roll No= ";
+		cin>>rollno;
+		cout<<"\nEnter Student's 5 subject Marks= ";
+		for(int i=0;i<5;i++){
+			cin>>marks[i];
+		}
+    }
+    float avarage()
+    {  int sum=0;
+	   for(int i=0;i<5;i++)
+    {
+       sum=sum+marks[i];
+       return ((float)sum/5);         //(float)
+	}
+    }
+     
+
+    void result()
+    {
+        cout<<"\nStudent Name= "<<name;
+		cout<<"\nStudent Roll No= "<<rollno;
+		cout<<"\n average Marks= "<<avarage();
+    }
+    
+};
+int main()
+{
+    student s;
+    s.set_data();
+    s.result();
+    return 0;
+}
+
+output>>>>>
+
+Student Name= Rushikesh
+
+Student Roll No= 19
+
+Enter Student's 5 subject Marks= 90
+90
+75
+48
+85
+
+Student Name= Rushikesh
+Student Roll No= 19
+ average Marks= 77.6
+
+--------------------------------------------------------------------------------------------------------------------------
+
+problem 2>>>>>>>
+
+code>>> 
+
+#include<iostream>
+using namespace std;
+class employee
+{
+	private:
+		int empld;
+		char name[20];
+		float basicsalary;
+		
+	public:
+		void set_data()
+	{
+	    cout<<"\nEnter Employee Name= ";
+	    cin>>name;
+		cout<<"\nEnter Employee ID= ";
+		cin>>empld;
+		cout<<"\nEnter Employee's Basic Salary= ";
+		cin>>basicsalary;
+    }
+    
+    float grosssalary()
+    {  float grosssalary=0;
+       int HRA,DA;
+       HRA=0.2*basicsalary;
+       DA=0.5*basicsalary;
+       grosssalary=basicsalary+HRA+DA;
+       return grosssalary;        
+	}
+    
+    void display()
+    {
+        cout<<"\nEnter Employee Name= "<<name;
+		cout<<"\nEnter Employee ID= "<<empld;
+		cout<<"\nEnter Employee's Basic Salary"<<basicsalary;
+		cout<<"\nEnter Employee's Gross Salary"<<grosssalary();
+    }
+};
+
+main()
+{
+	employee e;
+    e.set_data();
+    e.display();
+    
+    return 0;
+}
+		
+output>>>
+
+
+Enter Employee Name= Ranchoddas
+
+Enter Employee ID= 101
+
+Enter Employee's Basic Salary= 100000
+
+Enter Employee Name= Ranchoddas
+Enter Employee ID= 101
+Enter Employee's Basic Salary100000
+Enter Employee's Gross Salary170000
+-----------------------------------------------------------------------------------------------------------------------------------
+
+problem 3>>>>>>>
+
+code>>> 
+#include<iostream>
+using namespace std;
+class train
+{
+	private:
+		int train_no,able_seats,requireseats,seat;
+		string source,destination;
+		
+	public:
+		void set_data()
+	{
+	    cout<<"\nEnter Train Number= ";
+	    cin>>train_no;
+		cout<<"\nEnter Starting Point of Train= ";
+		cin>>source;
+		cout<<"\nEnter Destination= ";
+		cin>>destination;
+		cout<<"\nEnter Available Seats= ";
+		cin>>able_seats;
+		cout<<"\nEnter Require Seats= ";
+		cin>>requireseats;
+    }
+    
+    void bookticket()
+    {
+    	if(requireseats<able_seats)
+    	{
+    		cout<<"\n Ticket Book Successfully";
+    		seat=able_seats-requireseats;
+		}
+		else
+		{
+			cout<<"\nWe are Sorry only "<<able_seats<<" are Available";
+		}
+	}
+    
+    void display()
+    {
+         cout<<"\nEnter Train Number= "<<train_no;
+		cout<<"\nEnter Starting Point of Train= "<<source;
+		cout<<"\nEnter Destination= "<<destination;
+		cout<<"\nEnter Available Seats= "<<seat;
+    }
+};
+
+main()
+{
+	train t;
+    t.set_data();
+    t.bookticket();
+    t.display();
+    
+    return 0;
+}
+		
+output>>>>>>
+
+Enter Train Number= 1001
+
+Enter Starting Point of Train= nashik
+
+Enter Destination= pune
+
+Enter Available Seats= 100
+
+Enter Require Seats= 50
+
+ Ticket Book Successfully
+Enter Train Number= 1001
+Enter Starting Point of Train= nashik
+Enter Destination= pune
+Enter Available Seats= 50
+
+>>>>>>>>>
+
+Enter Train Number= 1001
+
+Enter Starting Point of Train= nashik
+
+Enter Destination= pune
+
+Enter Available Seats= 20
+
+Enter Require Seats= 30
+
+We are Sorry only 20 are Available
+Enter Train Number= 1001
+Enter Starting Point of Train= nashik
+Enter Destination= pune
+Enter Available Seats= 20
+------------------------------------------------------------------------------------------------------------------------------------
+
+problem 4>>>>>>
+
+code>>>
+
+#include<iostream>
+using namespace std;
+ 
+class product
+{
+	private:
+	string name;
+	int productid,qty,cartquantity;
+	float price;
+	static int totalitemincart;
+	static float totalcartvalue;
+	
+	public:
+		
+	
+	      product(int id,string name,int qty,float price)
+	      {
+	      	   
+	      	    productid=id;
+		        this->name=name;
+		        this->price=price;
+		        this->qty=qty;
+		        this->price=price;
+		        cartquantity=0;
+		        totalitemincart++;
+				totalcartvalue+price;
+		        
+          }
+          void addtocart(int qty1)
+          {
+          	if(qty>qty1)
+          	{
+          		qty=qty-qty1;
+          		cartquantity=qty1;
+          		totalitemincart=totalitemincart+qty1;
+          		totalcartvalue=totalcartvalue+qty1*price;
+          		cout<<"\n"<<qty1<<" added successfully in cart";
+			  }
+		  }
+         void displayproductdetails()
+	      {     
+	            cout<<"\nProduct ID= "<<productid;
+		        cout<<"\nName= "<<name;
+	        	cout<<"\nQuantity= "<<qty;
+	        	cout<<"\ncartquantity= "<<cartquantity;
+        		cout<<"\nProduct Price= "<<price;
+        		
+          }
+          float caltotal()
+          {
+          	return cartquantity*price;
+		  }
+          static displaycartsummary()
+	      {
+		        cout<<"\n Total Items in Cart= "<<totalitemincart;
+		        cout<<"\n Total Cart Value= "<<totalcartvalue;
+	      }
+ 	
+	
+ }; 
+ int product::totalitemincart=0;
+ float product::totalcartvalue=0;
+int main()
+ {
+ 	
+ 	product s(101,"soap",100,45);
+ 	s.addtocart(25);
+ 	s.displayproductdetails();
+ 	s.displaycartsummary();
+ 	cout<<"\n---------------------------------------------------";
+ 	product p(102,"pen",500,8.5);
+ 	p.addtocart(25);
+ 	p.displayproductdetails();
+ 	p.displaycartsummary();
+ 	return 0;
+ }
+ 
+output>>>>>>>
+
+
+25 added successfully in cart
+Product ID= 101
+Name= soap
+Quantity= 75
+cartquantity= 25
+Product Price= 45
+ Total Items in Cart= 26
+ Total Cart Value= 1125
+---------------------------------------------------
+25 added successfully in cart
+Product ID= 102
+Name= pen
+Quantity= 475
+cartquantity= 25
+Product Price= 8.5
+ Total Items in Cart= 52
+ Total Cart Value= 1337.5
+----------------------------------------------------------Thank You---------------------------------------------------------

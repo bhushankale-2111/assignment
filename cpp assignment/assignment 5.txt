@@ -1,0 +1,280 @@
+1.Write a C++ program to reverse a string using a while loop.
+
+#include<iostream>
+using namespace std;
+int main()
+{
+	string str="Hello";
+	int e = str.length()-1;
+	
+	for(int i=0; i<str.length()/2; i++)
+	{
+		swap(str[i],str[e--]);
+	}
+	
+		cout<<"\n"<<str;
+	
+}
+
+/*
+Output:
+-------
+olleH
+-------
+*/
+
+------------------------------------------------------------------------------------------------------------------
+
+2.Write a C++ program to Count the Number of Vowels and Consonants in a String
+
+#include<iostream>
+using namespace std;
+
+int main()
+{
+	string str="Exercise";
+	int vowels_count=0, consonants_count=0;
+	
+	for(char s : str){
+		s = tolower(s);
+		if(s=='a'||s=='e'||s=='i'|| s=='o'|| s=='u')
+		vowels_count++;
+		else
+		consonants_count++;
+	}
+	
+	cout<<"\nTotals Vowels are "<<vowels_count;
+	
+	cout<<"\nTotals Consonants are "<<consonants_count;
+	
+	return 0;
+}
+/*
+Output:
+
+Totals Vowels are 4
+Totals Consonants are 4
+------------------------
+*/
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+3.Write a C++ program to find the First Non-Repeating Character in a String
+
+
+#include<iostream>
+using namespace std;
+
+int main()
+{
+	string str="programming";
+	char flag=0;
+	
+	for(char s:str)
+	{
+		char ch =s;
+		for(char s:str)
+		{
+			if(ch == s)
+			{
+				flag++;
+			}
+		}
+		if(flag==1)
+		{
+			cout<<"Char is "<<ch<<"\n";
+		}
+		flag=0;
+	}
+/*
+Output:
+
+Char is p
+Char is o
+Char is a
+Char is i
+Char is n
+
+*/
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+4.Write a C++ program to Count the Occurrences of Each Character in a String.
+
+#include<iostream>
+using namespace std;
+
+int main()
+{
+string str="programming";
+
+int arr[256]={0};
+
+for(char s:str)
+{
+	arr[s]++;
+}
+
+for(int i=0; i<256; i++)
+{
+	  if(arr[i])
+	  cout<<"Char "<<char(i)<<" total occrance is: "<<arr[i]<<endl;
+}
+
+
+
+
+return 0;
+}
+/*
+Output:
+Char a total occrance is: 1
+Char g total occrance is: 2
+Char i total occrance is: 1
+Char m total occrance is: 2
+Char n total occrance is: 1
+Char o total occrance is: 1
+Char p total occrance is: 1
+Char r total occrance is: 2
+
+*/
+---------------------------------------------------------------------------------------------------------------------------------------------'
+
+
+5.Write a C++ program to Remove Duplicates from a String
+#include<iostream>
+using namespace std;
+
+int main()
+{
+string str="programming";
+
+int arr[256]={0};
+
+
+for(char s:str)
+{
+	arr[s]++;
+}
+
+for(char ch:str)
+{
+	  if(arr[ch]==1)
+	  cout<<"Char is "<<ch<<endl;
+}
+
+return 0;
+}
+
+/*
+Output:
+Char is p
+Char is o
+Char is a
+Char is i
+Char is n
+
+*/
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+6.Write a C++ program to find the Longest Word in a Sentence
+
+#include<iostream>
+#include<sstream>
+using namespace std;
+
+int main()
+{
+string str="This is C++ lab session";
+
+string long_word,word;
+
+int str_len=0;
+
+stringstream ss(str);
+
+while(ss>>word)
+{
+	if(word.length()>str_len)
+	{
+		str_len = word.length();
+		long_word = word;
+	}
+}
+
+cout<<"Long word is : "<<long_word;
+
+return 0;
+}
+
+/*
+Output
+Long word is : session
+------------------------------
+*/
+----------------------------------------------------------------------------------------------------------------------------------------
+7.Write a C++ program to Count the Number of Words in a Sentence
+
+#include<iostream>
+using namespace std;
+int main()
+{
+	string str="c++ lab";
+	int word=1;
+	for(int i=0; i<str.length(); i++)
+	{
+		if(str[i]==' ')
+		{
+			word++;
+		}
+	}
+	cout<<"Total words is "<<word;
+	return 0;
+}
+/*
+Output:
+
+Total words is 2
+
+*/
+------------------------------------------------------------------------------------------------------------
+8.Write a C++ program to Check if Two Strings are Anagrams
+#include<iostream>
+using namespace std;
+int main()
+{
+	int asci[250] = {0};
+	string str1="listen";
+	string str2="silent";
+	int word=1;
+	
+	for(int i=0; i<str1.length(); i++)
+	{
+	asci[str1[i]]++;
+	}
+
+	for(int i=0; i<str2.length(); i++)
+	{
+	asci[str2[i]]++;
+	}
+	
+	for(int i=0; i<str2.length(); i++)
+	{
+	asci[str2[i]] == 1 ? word = 0 : 0;
+	}
+
+	if(word)
+		cout<<"string Anagrams ";
+
+	else
+	cout<<"Not Anagrams";
+	return 0;
+}
+
+/*
+Output:
+string Anagrams
+-------------------------
+*/
+------------------------------------------------------------------------------------------------------------------------
+10.Write a C++ program to Remove Spaces from a String.
+
+

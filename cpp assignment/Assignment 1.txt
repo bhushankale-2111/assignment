@@ -1,0 +1,494 @@
+/*1.Write a program scan one number and update that
+number with original
+value plus half value of original value (use single variable)
+a=100--->a=150;*/
+
+#include<iostream>
+using namespace std;
+int main()
+{
+	int n;
+	 cout<<"enter number";
+	 cin>>n;
+	 n=n+(n/2);
+	cout<<"\n updated number is"<<n;
+	return 1;
+}
+
+/*
+outout:
+enter number10
+updated number is15*/
+------------------------------------------------------------------------------------------------------------------------------ 
+---------------------------------------------------------------------------------------------------------------------------
+
+//2. Write a program scan hours and convert in min and sec.
+
+#include<iostream>
+using namespace std;
+int main()
+{
+	int hour,min,sec;
+	 cout<<"enter number of hour ";
+	 cin>>hour;
+	 min=hour*60;
+	 sec=hour*60*60;
+	cout<<"\n calculated min is "<<min<<"\n calculated sec is "<<sec;
+	return 1;
+}
+/* Output:
+enter number of hour 5
+
+calculated min is 300
+ calculated sec is 18000
+----------------------*/
+-----------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------
+
+//3. write a program scan year and convert in days and month
+
+#include<iostream>
+using namespace std;
+int main()
+{
+	int year,months,days;
+	 cout<<"enter number of year";
+	 cin>>year;
+	 months=year*12;
+	 days=year*365;
+	 
+	cout<<"\n calculated months are "<<months<<"\n calculated days are "<<days;
+	return 1;
+}
+
+/* Output
+
+enter number of year5
+
+ calculated months are 60
+ calculated days are 1825*/
+
+---------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------
+
+/*4. Write a program scan age of person
+and print person is minor, major or
+senior citizen.*/
+
+#include<iostream>
+using namespace std;
+int main()
+{
+	int age;
+	 cout<<"enter number of age";
+	 cin>>age;
+	 if(age<18)
+	 {
+	 	cout<<"person is minor";
+	 }
+	 else
+	 {
+	 	if(age>18&&age<60)
+	 	{
+	 	cout<<"person is major";
+	 }else
+	 {
+	 	cout<<"person is senior citizen";
+	 }
+	 }
+	 return 0;
+}
+
+/*Output: 
+
+enter number of age15
+person is minor
+--------------------------------------
+enter number of age55
+person is major
+--------------------------------
+*/
+
+---------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------
+/*5.Write a C++ program that calculates anemployee's gross salary based on their basicsalary using the following conditions:
+• HRA = 20% of basic salary
+• DA = 50% of basic salary
+• If basic salary is more than 50,000, apply an
+additional bonus of 10% of the basic salary.*/
+
+#include<iostream>
+using namespace std;
+int main()
+{
+	int bs ;
+	float hra,da,bonus=0,gs;
+	cout<<"enter basic salary";
+	cin>>bs;
+	hra=bs*0.2;
+	
+	da=bs*0.5;
+	if(bs>50000){
+	bonus=bs*0.1;	
+		}
+	gs=bs+hra+da+bonus;
+	cout<<"\n gross sal is "<<gs;
+	cout<<"\nhra"<<hra;
+	cout<<"\n da is"<<da;
+	cout<<"\nbonus"<<bonus;
+	 
+	 return 0;
+}
+		
+/* Output:
+enter basic salary65000
+
+ gross sal is 117000
+ hra13000
+ da is32500
+ bonus6500
+---------------------------
+*/
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------
+
+/*6.Write a C++ program to calculate the electricitybill based on the following conditions:
+• Up to 100 units: ₹5 per unit
+• 101 to 300 units: ₹7 per unit
+• Above 300 units: ₹10 per unit
+*/
+
+#include<iostream>
+using namespace std;
+int main()
+{
+	int unit ,bill=0 ;
+	cout<<"enter units";
+	cin>>unit;
+	if (unit<=100)
+
+	{
+		bill=unit*5;
+	}
+	else
+	{if(unit<300){
+		bill=100*5+(unit-100)*7;
+	}
+	else{
+		bill=100*5+200*7+(unit-300)*10;
+	}
+	
+	}
+	cout<<"bill is"<<bill;
+return 0;	
+}
+
+/*
+Output:
+enter units203
+bill is1221
+-------------*/
+
+---------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------
+
+/*7.Write a C++ program to simulate an ATMtransaction:
+• The user enters the amount to withdrawwithdraw. 
+• If the amount is a multiple of 100 and thebalance is sufficient, process the transaction.
+• Otherwise, display an appropriate errormessage.*/
+
+#include<iostream>
+using namespace std;
+int main()
+{
+	int amount, balance=300000;
+	cout<<"enter amount";
+	
+	cin>>amount;
+	
+	if(amount%100!=0){
+		cout<<"enter proper amoun";
+	}
+	else{
+	
+	if(balance>=amount)
+	{
+		balance=balance-amount;
+		cout<<"your balance is "<<balance;
+	}
+	else {
+		cout<<"insuficent balance";
+	}
+
+	}
+	return 0;
+	
+	
+}
+/*Output
+enter amount6000
+your balance is 294000
+-----------------------*/
+
+
+------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------
+
+/*8.write a program to modify the basic grading system by adding:
+• A distinction for students who score 90 and above.
+• "Fail" for students scoring below 40.
+• A conditional check to ensure the marks
+entered are between 0 and 100. */
+
+#include<iostream>
+using namespace std;
+int main()
+{
+	int marks;
+	cout<<"enter marks";
+	cin>>marks;
+	if(marks>=0&&marks<100)
+	{
+		if(marks>=90){
+		
+		cout<<"distinction";
+	}
+		else if(marks>40){
+		
+		cout<<"first class";
+		}
+		else
+		{
+		cout<<"fail";
+    	}}
+	else
+	{
+	cout<<"enter valid marks";
+	}
+
+return 0;
+}
+/*
+enter marks50
+first class
+--------------------------------*/
+---------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+
+/* 9. Write a C++ program that takes three sides of a
+  triangle as input and determines if the triangle is:
+• Equilateral (all sides equal)
+• Isosceles (two sides equal)
+• Scalene (all sides different)
+• Not a triangle (sum of two sides must be greater
+than the third)*/
+
+#include<iostream>
+using namespace std;
+int main()
+{
+	int income;
+	cout<<"enter income";
+	cin>>income;
+	if(income<=250000)
+	{
+		cout<<"no tax";
+		
+	}
+	else if(income<=500000)
+	{
+		cout<<"\n tax is"<<(income-250000)*0.05; 
+	}
+	else if(income<=1000000)
+	{
+		cout<<"\n tax is"<<(250000*0.05)+(income-250000)*0.2;
+	}
+	else
+	{
+		cout<<"\n tax is"<<(250000*0.05)+(1000000-250000)*0.2+(income-1000000)*0.3;
+	}
+	return 0;
+}
+
+/* Output
+enter income3600000
+
+ tax is942500
+ */
+------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------
+
+/* 10.Write a C++ program to convert 24-hour format
+time into 12-hour AM/PM format.*/
+
+#include<iostream>
+using namespace std;
+int main()
+{
+	int hour, min;
+	cout<<"enter time\n";
+	cin>>hour>>min;
+	if(hour==00)
+	{
+		hour=12;
+		cout<<"\ntime is"<<hour<<":"<<min<<"am";
+	}
+	else 	if(hour>12)
+	{
+		hour=hour-12;
+		cout<<"\ntime is"<<hour<<":"<<min<<"pm";
+	}
+	else	if(hour<12)
+	{
+		
+		cout<<"\ntime is"<<hour<<":"<<min<<"am";
+	}
+	else
+	{
+
+		cout<<"\ntime is"<<hour<<":"<<min<<"pm";
+	}
+	return 0;
+	}
+	
+/* Output:
+enter time
+23
+15
+
+time is11:15pm
+*/
+
+#include<iostream>
+using namespace std;
+int main()
+{
+	int s1,s2, s3;
+	cout<<"\nenter side of trangle\n";
+	cin>>s1>>s2>>s3;
+	
+	if(s1+s2!=s3&&s2+s3!=s1&&s1+s3!=s2){
+		if(s1==s2&&s2==s3)
+		{
+			cout<<"equilater trangle";
+		
+		}
+		else if(s1==s2||s2==s3){
+			cout<<"isoscels trangle";
+			
+		
+		}
+		else{
+			cout<<"scalens trangle";
+		
+		}
+	}
+	else
+	{
+		cout<<"not trangle";
+		
+	}
+	return 0;
+}
+/*Output
+
+enter side of trangle 
+25
+25
+30
+isoscels trangle
+*/
+
+------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------
+
+/*11.Write a C++ program to calculate income tax
+based on the following conditions:
+• Income <= 250000 → No tax
+• Income 250001 - 500000 → 5% tax
+• Income 500001 - 1000000 → 20% tax
+• Income > 1000000 → 30% tax*/
+
+#include<iostream>
+using namespace std;
+int main()
+{
+	int income;
+	cout<<"enter income";
+	cin>>income;
+	if(income<=250000)
+	{
+		cout<<"no tax";
+		
+	}
+	else if(income<=500000)
+	{
+		cout<<"\n tax is"<<(income-250000)*0.05; 
+	}
+	else if(income<=1000000)
+	{
+		cout<<"\n tax is"<<(250000*0.05)+(income-250000)*0.2;
+	}
+	else
+	{
+		cout<<"\n tax is"<<(250000*0.05)+(1000000-250000)*0.2+(income-1000000)*0.3;
+	}
+	return 0;
+}
+
+/* Output
+enter income3600000
+
+ tax is942500
+ */
+------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------
+/*12• Write a C++ program that checks if a number
+is:
+• Positive, Negative, or Zero
+• Even or Odd*/
+
+#include<iostream>
+using namespace std;
+int main()
+{
+	int num;
+	cout<<"enter number";
+	cin>>num;
+	if(num>0){
+	cout<<"\n"<<num<<"is positive";	
+	}
+	else
+	{
+		if(num<0){
+				cout<<"\n"<<num<<"is negative ";
+		
+	}
+	else
+	{
+			cout<<"\n"<<num<<"is zero";
+	}
+	
+	}
+	
+	if(num%2==0)
+	{
+		cout<<"\n"<<num<<"is even";
+	}
+	else
+	{
+		cout<<"\n"<<num<<"is odd";
+	}
+	return 0;
+	
+	
+}
+/*Output
+enter number45
+
+45is positive
+45is odd
+
+*/

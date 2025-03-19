@@ -1,0 +1,597 @@
+/*1.Write a C++ program that takes a number (1-12) and prints the corresponding month name.*/
+
+#include<iostream>
+using namespace std;
+ int  main(){
+ 
+ 	int ch;
+ 
+ 	cout<<"enter number";
+ 	cin>>ch;
+ 	
+ 	switch(ch)
+ 	{
+ 		case 1:
+ 			cout<<"january";
+ 			break;
+ 		
+		 case 2:
+ 			cout<<"february";
+ 			break;
+		case 3:
+ 			cout<<"march";
+ 			break;
+		case 4:
+ 			cout<<"april";
+ 			break;
+		case 5:
+ 			cout<<"may";
+ 			break;
+		case 6:
+ 			cout<<"june";
+ 			break;
+		
+	   case 7:
+ 			cout<<"july";
+ 			break;
+		case 8:
+ 			cout<<"august";
+ 			break;
+		case 9:
+ 			cout<<"september";
+ 			break; 
+		case 10:
+ 			cout<<"octomber";
+ 			break;
+		case 11:
+ 			cout<<"november";
+ 			break;
+		case 12:
+ 			cout<<"decrmber";
+ 			break;	
+		default :
+		 cout<<"wrog input"; 	 	 	 	 	 	 	 	
+	 }
+	 
+	 return 0;
+}
+/*
+enter number11
+november
+--------------------------------
+*/
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+/*2.Write a C++ program to check if a year is a leap year using the ternary (? :) operator.*/
+
+//write program to check year is leap year or not by using turnery operator;
+#include<iostream>
+using namespace std;
+ int  main(){
+ 
+ 	int year;
+ 	cout<<"enter year";
+ 	cin>>year;
+ 	((year%4==0)&&(year%100!=0))||(year%400==0)?cout<<year<<" is leap year":cout<<year<<"not leap year";
+ 	
+ 	return 0;
+ }
+ 
+ /*output:
+ enter year2020
+2020 is leap year
+-------------------------
+ */
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+/*Write a C++ program that takes coefficients a, b, and c of a quadratic equation ax2+bx+c=0 as input and calculates the roots using the quadratic formula. Use if-else to handle different cases:
+If the discriminant  D=b2−4ac is positive, print two real roots.
+If D=0, print one real root.
+If D<0, print "No real roots".
+
+*/
+
+#include<iostream>
+#include<cmath>
+using namespace std;
+ int  main(){
+ 
+ 	int a,b,c,D, R,R1,R2;
+ 	cout<<"enter cofficent";
+ 	cin>>a>>b>>c;
+ 	
+ 	D=(b*b)-(4*a*c);
+ 	
+ 	if(D>0)
+ 	{
+ 		R1=(-b+sqrt(D))/(2*a);
+ 		R2=(-b-sqrt(D))/(2*a);
+ 		cout<<"roots are"<<R1<<"and"<<R2;
+ 		cout<<"discriminant is"<<D;
+	 }
+	 else if(D==0){
+	 	R=-b/(2*a);
+	 	cout<<"roots are"<<R;
+	 	cout<<"discriminant is"<<D;
+	 }
+	 else
+	 {
+	 	cout<<"\n discriminant is"<<D;
+	 	cout<<"\n no root present";
+	 }
+	 return 0;}
+	 
+/*Output:
+enter cofficent
+12
+25
+26
+discriminant is-623
+no root present
+------------------------------- */
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+/*4.Write a C++ program that generates a random number between 1 and 10. The user keeps guessing until they enter the correct number. Use a do-while loop.
+
+Hint :- use 
+#include <cstdlib> // For rand()  generation of no
+#include <ctime>   // For time()  unique sequnce
+srand(time(0));   to seed random number generator
+*/
+
+#include<iostream>
+#include<cstdlib>  //random number generatiob
+#include<ctime>
+using namespace std;
+ int  main(){
+ 	srand(time(0));
+int nu=rand()%10,guess_numner;
+
+do{
+
+cout<<"\n enter number from 1 to 10";
+cin>>guess_numner;
+cout<<nu;
+if(guess_numner>nu){
+	cout<<"\ngreater";
+	cout<<"\ntry again";
+}else if(guess_numner<nu){
+	cout<<"\nsmaller";
+	cout<<"\ntry again";
+}
+else {
+	cout<<"\n";
+}
+}
+while(guess_numner!=nu);
+cout<<"\ncongrulation u enter right num";
+return 0;
+
+ }
+ /*Output:
+  enter number from 1 to 10
+1
+1
+congrulation u enter right num
+
+-------------------------------
+ */
+ 
+ --------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+/*5.Write a C++ program to Print All Leap Years Between 2000 and 2024 and Their Count*/
+
+#include<iostream>
+using namespace std;
+ int  main(){
+ 
+ 	int year,count=0;
+ /*	cout<<"enter year";
+ 	cin>>year;*/
+ 	for(year=2000;year<=2024;year++){
+	 
+ 	((year%4==0)&&(year%100!=0))||(year%400==0)?cout<<year<<endl,count++:0;
+ 	/*if(((year%4==0)&&(year%100!=0))||(year%400==0))
+	 {
+	 	cout<<"\n"<<year;
+	 	count++;
+	 }*/
+	 }
+cout<<"\nnumber of leap year ="<<count;
+ 	return 0;
+ }
+ 
+ /*
+ Output:
+2000
+2004
+2008
+2012
+2016
+2020
+2024
+
+number of leap year =7
+ 
+ */
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+/*6. Write a menu-driven calculator using a do-while loop that performs addition, subtraction, multiplication, or division until the user chooses to exit.*/
+#include<iostream>
+using namespace std;
+main()
+{
+	int num1,num2,ch,ans;
+	do{
+		cout<<"\n-----calculator------\n";
+		cout<<"1adition 2.substraction 3.multiplication 4.division";
+		cout<<"\n enter your choice";
+		cin>>ch;
+		
+		if(ch>0&&ch<5)
+		{
+		cout<<"\nenter two number";
+		cin>>num1>>num2;	
+		}
+		switch(ch)
+		{
+		
+			case 1:
+				ans=num1+num2;
+				cout<<"addition"<<ans;
+				break;
+					case 2:
+				ans=num1-num2;
+				cout<<"substraction"<<ans;
+				break;
+					case 3:
+				ans=num1*num2;
+				cout<<"multiplication"<<ans;
+				break;
+					case 4:
+						if(num2!=0){
+						
+				ans=num1/num2;
+				cout<<"devision"<<ans;
+				}
+				else
+				{
+					cout<<"enter valid input";
+				}
+				break;
+				case 5:
+					cout<<"terminating calculator";
+					break ;
+				default :
+					cout<<"enter valid input";
+				
+		}
+	}
+	while(ch!=5);
+	
+	return 0;
+	
+}
+
+/*
+Output:
+-----calculator------
+1adition 2.substraction 3.multiplication 4.division
+ enter your choice4
+
+enter two number4
+2
+devision2
+-----calculator------
+1adition 2.substraction 3.multiplication 4.division
+ enter your choice5
+terminating calculator
+--------------------------------
+Process exited after 24.27 seconds with return value 0
+Press any key to continue . . .
+
+*/
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+/*7.
+Write a C++ program to  Print Squares of Numbers from 1 to 5*/
+
+
+#include<iostream>
+using namespace std;
+main()
+{int n;
+	for(int i=1;i<=5;i++)
+	{
+		n=i*i;
+		cout<<"\n"<<i<<"squre is "<<n;
+	}
+}
+
+/*
+
+Output:
+
+1squre is 1
+2squre is 4
+3squre is 9
+4squre is 16
+5squre is 25
+--------------------------------
+
+*/
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+//7.Write a C++ program to Print Count of Numbers Divisible by 5 Between 1 and 100
+
+
+#include<iostream>
+using namespace std;
+main()
+{
+int count;
+for(int i=1;i<=100;i++)
+{
+	if(i%5==0)
+	{
+		cout<<"\n"<<i;
+	count++;
+	}
+}
+cout<<"\n"<<count<<" numbers aredivisible by 5";
+
+}
+
+/*
+Output:
+5
+10
+15
+20
+25
+30
+35
+40
+45
+50
+55
+60
+65
+70
+75
+80
+85
+90
+95
+100
+
+20 numbers aredivisible by 5
+--------------------------------*/
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+/*9.If we list all the natural numbers below 10 that are multiples of 3 or 5 , we get and 3,5,6 & 9 . The sum of these multiples is 23.
+Find the sum of all the multiples of 3 or 5  below 1000*/
+
+
+#include<iostream>
+using namespace std;
+main()
+{
+	int sum=0;
+	for(int i=1;i<=1000;i++)
+	{
+		if(i%3==0||i%5==0)
+		{
+			sum=sum+i;
+		}
+	}
+	cout<<"\n sum of multiple of 3 and 5 is  "<<sum;
+	
+}
+
+/*
+ sum of multiple of 3 and 5 is  234168
+*/
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+/*10.Write a program to Scan a Number and Print It in Reverse*/
+
+#include<iostream>
+using namespace std;
+main()
+{
+	int num, reverse;
+	cout<<"enter number";
+	cin>>num;
+	
+	while(num%10!=0){
+		
+		reverse=reverse*10+num%10;
+		num=num/10;
+		
+	}
+	cout<<"\n reverse number"<<reverse;
+}
+
+/*
+
+enter number123
+
+ reverse number321
+
+ */
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+/11.*Write a program to Check if a Number is a Palindrome*/
+
+#include<iostream>
+using namespace std;
+main()
+{
+	int num, reverse,oreginalnum;
+	cout<<"enter number";
+	cin>>num;
+	oreginalnum=num;
+	while(num%10!=0){
+		
+		reverse=reverse*10+num%10;
+		num=num/10;
+		
+	}
+	
+	if(oreginalnum==reverse)
+	{
+		cout<<"\npalindrome number";
+		
+	}
+	else
+	{
+			cout<<"\nnotpalindrome number";
+	
+		
+	}
+}
+
+/*
+enter number121
+
+palindrome number
+
+ */
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+/*12.A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is
+9009=91*99.
+
+Find the largest palindrome made from the product of two 3-digit numbers.
+
+#include<iostream>
+using namespace std;
+main()
+{
+	int largestPalindrome=0,oreginalnum;
+	for(int i=999;i>=100;i--){
+	for(int j=i;j>=100;j--){
+	
+	int product=i*j;
+	int reverse=0;
+	oreginalnum=product;
+	while(oreginalnum>0){
+		
+		reverse=reverse*10+(oreginalnum%10);
+	oreginalnum=oreginalnum/10;
+		
+	}
+	
+	if(product==reverse && product>largestPalindrome)
+	{
+		
+	largestPalindrome=product;
+		
+	}
+	
+	
+}
+}
+cout<<"largest palindrome"<<largestPalindrome;
+}
+
+/*
+Output:
+largest palindrome906609
+--------------------------------
+
+*/
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+/*13.Each new term in the Fibonacci sequence is generated by adding the previous two terms. By starting with 1 and 2, the first 10 terms  will be:
+1,2,3,5,8,13,21,34,55,89....
+By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms*/
+#include<iostream>
+using namespace std;
+main()
+{
+int a=1,b=2,next=0,sum=0;
+
+while(b<4000000){
+if(b%2!=0){
+	sum=sum+b;
+}
+next=a+b;
+a=b;
+b=next;
+
+}
+cout <<"sum of even element of fibo  "<<sum;
+}
+/*
+output:
+sum of even element of fibo  4613730
+--------------------------------
+*/
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+/*14. Write a C++ program that checks if a number is an Armstrong number using a for loop.(A number is Armstrong if the sum of its digits raised to the power of the number of digits equals the number itself.
+ Example: 153 = 1³ + 5³ + 3³ = 153)*/
+
+
+
+#include<iostream>
+#include<cmath>
+using namespace std;
+
+int main()
+{
+	int num, digit=0,power=0, sum=0, reverse;
+	cout<<"enter number";
+	cin>>num;
+	for (int temp=num;temp>0;temp=temp/10)
+	{
+		power=power+1;
+	}
+	
+	for (int temp=num;temp>0;temp=temp/10)
+	{
+		digit=temp%10;
+		sum=sum+pow(digit,power);
+	}
+	if(num==sum)
+	{
+		cout<<num<<"armstrong number";
+		
+	}
+	else{
+			cout<<num<<"armstrong number";
+	}
+	return 0;
+}
+	
+	
+	/*
+	output:
+ 	enter number153
+    153armstrong number
+	*/
+
+
+
+
+
+
+
+
+
+
+
+
+ 
